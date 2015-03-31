@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150327023941) do
 
-  create_table "posters", force: true do |t|
+  create_table "posters", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
