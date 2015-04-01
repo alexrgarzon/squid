@@ -13,17 +13,26 @@
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <%= link_to "Squid", '#', id: "logo" %>
+      <%= link_to "SquidRunner", '#', id: "logo" %>
+      <% if poster_signed_in? %>
       <nav>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home",   '#' %></li>
-          <li><%= link_to "Help",   '#' %></li>
-          <li><%= link_to "Log in", '#' %></li>
+          <li><%= link_to "Home",   controller: 'welcome' %></li>
+          <li><%= link_to "OpenTasks", controller: 'opentasks', action:"show" %></li>
+          <li><%= link_to "MyTasks",   controller: 'mytasks', action:"show" %></li>
+          <li><%= link_to "MyProfile",   controller: 'profile', action:"show" %></li>
+          <li><%= link_to "Dummy",   '#' %></li>
+          <li><%= link_to('Logout', destroy_poster_session_path, :method => :delete) %></li>
         </ul>
       </nav>
+      <% end %>
     </div>
   </header>
   <div class="container">
+    <% if !poster_signed_in? %>
+      <%= image_tag("squidrunner.png", :alt => "shit broke") %>
+    <% end %>
+
     <%= yield %>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>

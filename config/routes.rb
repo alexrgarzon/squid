@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+
+  get 'profile/show'
+
+  get 'profile/edit'
+
+  get 'profile/update'
+
+  get 'mytasks/show'
+
+  get 'mytasks/finish'
+
+  get 'mytasks/unaccept'
+
+  get 'mytasks/info'
+
+  get 'opentasks/index'
+  
+  get 'opentasks/new'
+
+  get 'opentasks/create'
+
+  get 'opentasks/delete'
+
+  get 'opentasks/show'
+
+  get 'opentasks/accept'
+
   devise_for :posters
   get 'welcome/index'
 
