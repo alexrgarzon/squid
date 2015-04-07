@@ -1,0 +1,25 @@
+<h1>Create and Submit a Task!</h1>
+<p>Submit a Task that and wait for a SquidRunner to help out!</p>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Task Category:") %>
+  <%= select(:person, :city_id, [['--Select--', 0],['Food', 1], ['Laundry', 2], ['Miscellaneous', 3],['Package', 4] ]) %>
+  <br>
+  <%= label_tag(:q, "PickUp Location:") %>
+  <%= select(:person, :city_id, [['--Select--', 0],['Dorm', 1], ['Frist', 2], ['Nassau', 3],['Off Campus', 4],['N/A', 5] ,['Other', 6]  ]) %>
+  <br>
+  <%= label_tag(:q, "Delivery Location:") %>
+  <%= select(:person, :city_id, [['--Select--', 0],['Dorm', 1], ['Frist', 2], ['Nassau', 3],['Off Campus', 4],['N/A', 5],['Other', 6]]) %>
+  <br>
+  <%= label_tag(:q, "Task Title:") %>
+  <%= text_field_tag(:q) %>
+  <br>
+  <%= label_tag(:q, "Paying ($):") %>
+  <%= text_field_tag(:q) %>
+  <br>
+  <%= label_tag(:text, "Task Description:") %>
+  <br>
+  <%= text_area_tag(:text, "", :size => "50x5") %>
+  <br>
+  <%= submit_tag("Submit Task") %>
+<% end %>

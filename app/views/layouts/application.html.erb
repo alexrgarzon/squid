@@ -18,6 +18,7 @@
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home",   controller: 'welcome' %></li>
+          <li><%= link_to "CreateTask", controller: 'createtask', action:"create" %></li>
           <li><%= link_to "OpenTasks", controller: 'opentasks', action:"show" %></li>
           <li><%= link_to "MyTasks",   controller: 'mytasks', action:"show" %></li>
           <li><%= link_to "MyProfile",   controller: 'profile', action:"show" %></li>

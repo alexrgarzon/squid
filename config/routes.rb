@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'createtask/new'
+
+  get 'createtask/create'
+
   get 'profile/show'
 
   get 'profile/edit'
