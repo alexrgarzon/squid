@@ -17,17 +17,20 @@
       <% if poster_signed_in? %>
       <nav>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home",   controller: 'welcome' %></li>
-          <li><%= link_to "CreateTask", controller: 'createtask', action:"create" %></li>
-          <li><%= link_to "OpenTasks", controller: 'opentasks', action:"show" %></li>
-          <li><%= link_to "MyTasks",   controller: 'mytasks', action:"show" %></li>
-          <li><%= link_to "MyProfile",   controller: 'profile', action:"show" %></li>
+          <li><%= link_to "Home",   controller: '/welcome' %></li>
+          <li><%= link_to "CreateTask", controller: '/createtask', action:"create" %></li>
+          <li><%= link_to "OpenTasks", controller: '/opentasks', action:"show" %></li>
+          <li><%= link_to "MyTasks",   controller: '/mytasks', action:"show" %></li>
+          <li><%= link_to "MyProfile",   controller: '/profile', action:"show" %></li>
+          <li><%= link_to 'Edit Profile',edit_poster_registration_path(@poster) %></li>
           <li><%= link_to "Dummy",   '#' %></li>
           <li><%= link_to('Logout', destroy_poster_session_path, :method => :delete) %></li>
         </ul>
       </nav>
       <% end %>
     </div>
+
+
   </header>
   <div class="container">
     <% if !poster_signed_in? %>
